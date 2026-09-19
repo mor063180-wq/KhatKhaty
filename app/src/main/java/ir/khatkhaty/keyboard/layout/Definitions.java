@@ -9,6 +9,7 @@ public class Definitions {
     private Context context;
     private static final int CODE_ESCAPE = -2;
     private static final int CODE_SYMBOLS = -1;
+    private static final int CODE_LANGUAGE_SWITCH = -24;
 
     public Definitions(Context current) {
         this.context = current;
@@ -27,6 +28,7 @@ public class Definitions {
                 .addKey(context.getDrawable(R.drawable.ic_keyboard_arrow_up_24dp), CODE_ARROW_UP).asRepeatable()
                 .addKey(context.getDrawable(R.drawable.ic_keyboard_arrow_right_24dp), CODE_ARROW_RIGHT).asRepeatable()
                 .addKey("SYM", CODE_SYMBOLS).onCtrlShow("CLIP")
+                .addKey("FA/EN", CODE_LANGUAGE_SWITCH)
         ;
     }
 
@@ -39,6 +41,7 @@ public class Definitions {
                 .addKey(context.getDrawable(R.drawable.ic_copy_24dp), 53739)
                 .addKey(context.getDrawable(R.drawable.ic_paste_24dp), 53740)
                 .addKey("SYM", CODE_SYMBOLS).onCtrlShow("CLIP")
+                .addKey("FA/EN", CODE_LANGUAGE_SWITCH)
         ;
     }
 
@@ -81,6 +84,46 @@ public class Definitions {
                 .addKey('b').onShiftUppercase()
                 .addKey('n').onShiftUppercase()
                 .addKey('m').onShiftUppercase()
+                .addBackspaceKey()
+        ;
+    }
+
+    public static void addPersianRows(KeyboardLayoutBuilder keyboard) {
+        keyboard.newRow()
+                .addKey('ض')
+                .addKey('ص')
+                .addKey('ث')
+                .addKey('ق')
+                .addKey('ف')
+                .addKey('غ')
+                .addKey('ع')
+                .addKey('ه')
+                .addKey('خ')
+                .addKey('ح')
+                .addKey('ج')
+                .addKey('چ')
+                .newRow()
+                .addKey('ش')
+                .addKey('س')
+                .addKey('ی')
+                .addKey('ب')
+                .addKey('ل')
+                .addKey('ا')
+                .addKey('ت')
+                .addKey('ن')
+                .addKey('م')
+                .addKey('ک')
+                .addKey('گ')
+                .newRow()
+                .addKey('ظ')
+                .addKey('ط')
+                .addKey('ز')
+                .addKey('ر')
+                .addKey('ذ')
+                .addKey('د')
+                .addKey('پ')
+                .addKey('و')
+                .addKey('ژ')
                 .addBackspaceKey()
         ;
     }

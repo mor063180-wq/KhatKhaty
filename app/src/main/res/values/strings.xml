@@ -3,6 +3,7 @@
     <string name="codeboard_ime">CodeBoard IME</string>
     <string name="subtype_en_US">CodeBoard-%s</string>
     <string name="subtype_fr_FR">CodeBoard-%s</string>
+    <string name="subtype_fa_IR">CodeBoard-%s</string>
     <string name="app_intro">CodeBoard - Intro</string>
     <string name="change_keyboard">Change Keyboard</string>
     <string name="reopen_hint">Click here to see changes</string>

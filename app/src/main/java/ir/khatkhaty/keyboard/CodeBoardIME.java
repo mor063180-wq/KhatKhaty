@@ -75,6 +75,9 @@ public class CodeBoardIME extends InputMethodService
     private KeyboardUiFactory mKeyboardUiFactory = null;
     private KeyboardLayoutView mCurrentKeyboardLayoutView = null;
     private boolean longPressedSpaceButton = false;
+    private static final int LAYOUT_PERSIAN = 4;
+    private static final int CODE_LANGUAGE_SWITCH = -24;
+    private boolean persianActive = false;
 
     @Override
     public void onKey(int primaryCode, int[] KeyCodes) {
@@ -127,6 +130,12 @@ public class CodeBoardIME extends InputMethodService
                 setInputView(onCreateInputView());
                 controlKeyUpdateView();
                 shiftKeyUpdateView();
+                break;
+
+            case -24:
+                //Language switch (toggle Persian layout)
+                persianActive = !persianActive;
+                setInputView(onCreateInputView());
                 break;
 
             case 17: //KEYCODE_CTRL_LEFT:
@@ -511,6 +520,12 @@ public class CodeBoardIME extends InputMethodService
         String mCustomSymbolsSym4 = sharedPreferences.getCustomSymbolsSym4();
         String mCustomSymbolsMainBottom = sharedPreferences.getCustomSymbolsMainBottom();
         int mLayout = sharedPreferences.getLayoutIndex();
+        if (persianActive) {
+            mLayout = LAYOUT_PERSIAN;
+        }
+        if (mLayout == LAYOUT_PERSIAN) {
+            mCustomSymbolsMain = toPersianDigits(mCustomSymbolsMain);
+        }
 
         //Need this to get resources for drawables
         Definitions definitions = new Definitions(this);
@@ -562,6 +577,9 @@ public class CodeBoardIME extends InputMethodService
                         break;
                     case 3:
                         Definitions.addQwertzRows(builder);
+                        break;
+                    case 4:
+                        Definitions.addPersianRows(builder);
                         break;
                 }
                 definitions.addCustomSpaceRow(builder, mCustomSymbolsMainBottom);
@@ -620,6 +638,27 @@ public class CodeBoardIME extends InputMethodService
 
     public void shiftKeyUpdateView() {
         mCurrentKeyboardLayoutView.applyShiftModifier(shift);
+    }
+
+    private static String toPersianDigits(String input) {
+        if (input == null) {
+            return null;
+        }
+        char[] latin = {'0','1','2','3','4','5','6','7','8','9'};
+        char[] persian = {'\u06f0','\u06f1','\u06f2','\u06f3','\u06f4','\u06f5','\u06f6','\u06f7','\u06f8','\u06f9'};
+        StringBuilder result = new StringBuilder(input.length());
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            int digitIndex = -1;
+            for (int d = 0; d < latin.length; d++) {
+                if (latin[d] == c) {
+                    digitIndex = d;
+                    break;
+                }
+            }
+            result.append(digitIndex >= 0 ? persian[digitIndex] : c);
+        }
+        return result.toString();
     }
 
     private void clearLongPressTimer() {

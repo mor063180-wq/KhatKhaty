@@ -13,4 +13,10 @@
         android:imeSubtypeMode="Keyboard"
         />
 
+    <subtype
+        android:label="@string/subtype_fa_IR"
+        android:imeSubtypeLocale="fa_IR"
+        android:imeSubtypeMode="Keyboard"
+        />
+
 </input-method>
