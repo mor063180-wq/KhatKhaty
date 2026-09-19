@@ -200,13 +200,13 @@
         <Preference android:title="Restart Tutorial">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:targetClass="com.gazlaws.codeboard.IntroActivity"
-                android:targetPackage="com.gazlaws.codeboard" />
+                android:targetClass="ir.khatkhaty.keyboard.IntroActivity"
+                android:targetPackage="ir.khatkhaty.keyboard" />
         </Preference>
         <Preference android:title="Rate on Google Play">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="market://details?id=com.gazlaws.codeboard" />
+                android:data="market://details?id=ir.khatkhaty.keyboard" />
         </Preference>
         <Preference
             android:summary="@string/github_summary"

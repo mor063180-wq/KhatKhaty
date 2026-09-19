@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "com.gazlaws.codeboard"
+    namespace "ir.khatkhaty.keyboard"
     compileSdkVersion 34
     buildToolsVersion '34.0.0'
 
     defaultConfig {
-        applicationId "com.gazlaws.codeboard"
+        applicationId "ir.khatkhaty.keyboard"
         minSdkVersion 23
         targetSdk 35
         versionCode 23
