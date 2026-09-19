@@ -13,6 +13,8 @@ public class UiTheme {
 
     public float buttonBodyPadding = 5.0f;
     public Paint buttonBodyPaint;
+    public Paint accentBodyPaint;
+    public Paint onAccentPaint;
     public float buttonBodyBorderRadius = 8.0f;
     public boolean enablePreview = false;
     public boolean enableBorder;
@@ -22,6 +24,8 @@ public class UiTheme {
     private UiTheme(){
         this.foregroundPaint = new Paint();
         this.buttonBodyPaint = new Paint();
+        this.accentBodyPaint = new Paint();
+        this.onAccentPaint = new Paint();
         backgroundColor = 0xff000000;
     }
 
@@ -41,11 +45,17 @@ public class UiTheme {
         theme.buttonBodyPaint.setColor(info.backgroundColor);
         // foreground
         theme.foregroundPaint.setColor(info.foregroundColor);
+        theme.accentBodyPaint.setColor(info.accentColor);
+        theme.onAccentPaint.setColor(info.onAccentColor);
         theme.fontHeight = info.fontSize;
         theme.foregroundPaint.setTextSize(theme.fontHeight);
         theme.foregroundPaint.setTextAlign(Paint.Align.CENTER);
         theme.foregroundPaint.setAntiAlias(true);
         theme.foregroundPaint.setTypeface(Typeface.DEFAULT);
+        theme.onAccentPaint.setTextSize(theme.fontHeight);
+        theme.onAccentPaint.setTextAlign(Paint.Align.CENTER);
+        theme.onAccentPaint.setAntiAlias(true);
+        theme.onAccentPaint.setTypeface(Typeface.DEFAULT);
 
         return theme;
     }

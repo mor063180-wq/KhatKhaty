@@ -89,7 +89,7 @@ public class KeyboardButtonView extends View {
     private void drawButtonContent(Canvas canvas) {
         float x = this.getWidth()/2;
         float y = this.getHeight()/2 + uiTheme.fontHeight/3;
-        canvas.drawText(currentLabel, x, y, uiTheme.foregroundPaint);
+        canvas.drawText(currentLabel, x, y, key.info.isAccent ? uiTheme.onAccentPaint : uiTheme.foregroundPaint);
 
         if (key.info.icon != null){
             Drawable d = key.info.icon;
@@ -122,7 +122,7 @@ public class KeyboardButtonView extends View {
         float bottom = this.getHeight() - uiTheme.buttonBodyPadding;
         float rx = uiTheme.buttonBodyBorderRadius;
         float ry = uiTheme.buttonBodyBorderRadius;
-        canvas.drawRoundRect(left, top, right, bottom, rx, ry, uiTheme.buttonBodyPaint);
+        canvas.drawRoundRect(left, top, right, bottom, rx, ry, key.info.isAccent ? uiTheme.accentBodyPaint : uiTheme.buttonBodyPaint);
     }
 
     private void onPress() {

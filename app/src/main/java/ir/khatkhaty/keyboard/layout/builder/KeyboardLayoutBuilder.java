@@ -135,6 +135,15 @@ public class KeyboardLayoutBuilder {
         return asModifier(true);
     }
 
+    public KeyboardLayoutBuilder asAccent(boolean accent) {
+        currentKey.isAccent = accent;
+        return this;
+    }
+
+    public KeyboardLayoutBuilder asAccent() {
+        return asAccent(true);
+    }
+
     public KeyboardLayoutBuilder withOutputText(String s) {
         currentKey.outputText = s;
         return this;
@@ -170,6 +179,6 @@ public class KeyboardLayoutBuilder {
     }
 
     public KeyboardLayoutBuilder addEnterKey(){
-        return addKey(context.getDrawable(R.drawable.ic_keyboard_return_24dp), -4).withSize(1.5f);
+        return addKey(context.getDrawable(R.drawable.ic_keyboard_return_24dp), -4).withSize(1.5f).asAccent();
     }
 }

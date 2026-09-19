@@ -10,6 +10,8 @@
         android:icon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:dataExtractionRules="@xml/data_extraction_rules"
         android:theme="@style/AppTheme"
         android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
         >

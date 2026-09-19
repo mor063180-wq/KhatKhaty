@@ -51,4 +51,9 @@ public class KeyInfo {
      * Drawable is shown on the keyboard
      */
     public Drawable icon;
+
+    /**
+     * Draw this key with the theme's accent color
+     */
+    public boolean isAccent;
 }

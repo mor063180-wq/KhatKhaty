@@ -14,6 +14,15 @@ public class ThemeDefinitions {
         ThemeInfo theme = new ThemeInfo();
         theme.foregroundColor = whiteColor;
         theme.backgroundColor = 0xff263238;
+        theme.accentColor = 0xff378ADD;
+        return theme;
+    }
+
+    public static ThemeInfo Midnight(){
+        ThemeInfo theme = new ThemeInfo();
+        theme.foregroundColor = whiteColor;
+        theme.backgroundColor = 0xff0d0d0d;
+        theme.accentColor = 0xff378ADD;
         return theme;
     }
 
@@ -21,6 +30,7 @@ public class ThemeDefinitions {
         ThemeInfo theme = Default();
         theme.foregroundColor = blackColor;
         theme.backgroundColor = 0xffeceff1;
+        theme.accentColor = 0xff185FA5;
         return theme;
     }
 

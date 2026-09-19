@@ -28,7 +28,7 @@ public class Definitions {
                 .addKey(context.getDrawable(R.drawable.ic_keyboard_arrow_up_24dp), CODE_ARROW_UP).asRepeatable()
                 .addKey(context.getDrawable(R.drawable.ic_keyboard_arrow_right_24dp), CODE_ARROW_RIGHT).asRepeatable()
                 .addKey("SYM", CODE_SYMBOLS).onCtrlShow("CLIP")
-                .addKey("FA/EN", CODE_LANGUAGE_SWITCH)
+                .addKey("FA/EN", CODE_LANGUAGE_SWITCH).asAccent()
         ;
     }
 
@@ -41,7 +41,7 @@ public class Definitions {
                 .addKey(context.getDrawable(R.drawable.ic_copy_24dp), 53739)
                 .addKey(context.getDrawable(R.drawable.ic_paste_24dp), 53740)
                 .addKey("SYM", CODE_SYMBOLS).onCtrlShow("CLIP")
-                .addKey("FA/EN", CODE_LANGUAGE_SWITCH)
+                .addKey("FA/EN", CODE_LANGUAGE_SWITCH).asAccent()
         ;
     }
 

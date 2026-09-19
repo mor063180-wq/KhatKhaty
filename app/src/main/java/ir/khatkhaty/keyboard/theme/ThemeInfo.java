@@ -8,4 +8,6 @@ public class ThemeInfo {
     public float size;
     public float fontSize;
     public float sizeLandscape;
+    public int accentColor;
+    public int onAccentColor = 0xffffffff;
 }
